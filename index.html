@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Patunay — Cryptographic Assurance for Barangay Governance</title>
+  <meta name="description" content="E-Patunay is a Cryptographic-Assurance Governance System for the Barangay Community Relations Department. Verify documents and request certifications online." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 50:'#e8ecf4', 100:'#c5cfe3', 200:'#9eaed0', 300:'#7a8fbd', 400:'#5a74ad', 500:'#3d5a9e', 600:'#2d4a8a', 700:'#1e3a72', 800:'#122a58', 900:'#0a1628', 950:'#060e1a' },
+            electric: { 400:'#60a5fa', 500:'#3b82f6', 600:'#2563eb' },
+            cyan: { 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' },
+            gold: { 400:'#fbbf24', 500:'#f59e0b' }
+          },
+          fontFamily: { sans:['Inter','system-ui','sans-serif'], mono:['JetBrains Mono','monospace'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-navy-950 text-white font-sans antialiased overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="bcrd-logo.jpg" alt="BCRD Logo" class="w-10 h-10 rounded-full object-cover shadow-lg shadow-electric-500/25 group-hover:shadow-electric-500/40 transition-shadow" />
+        <span class="text-xl font-bold tracking-tight">E-Patunay</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#features" class="nav-link text-sm text-navy-200 hover:text-white transition-colors">Features</a>
+        <a href="#verify" class="nav-link text-sm text-navy-200 hover:text-white transition-colors">Verify</a>
+        <a href="#request" class="nav-link text-sm text-navy-200 hover:text-white transition-colors">Request</a>
+
+        <a href="#contact" class="nav-link text-sm text-navy-200 hover:text-white transition-colors">Contact</a>
+        <a href="#" class="ml-2 px-5 py-2.5 bg-gradient-to-r from-electric-500 to-cyan-500 rounded-xl text-sm font-semibold hover:shadow-lg hover:shadow-electric-500/25 transition-all hover:-translate-y-0.5">Login</a>
+      </div>
+      <button id="mobile-toggle" class="md:hidden p-2 text-navy-200 hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-navy-900/95 backdrop-blur-xl border-t border-white/5">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#features" class="mobile-link py-2 text-navy-200 hover:text-white">Features</a>
+        <a href="#verify" class="mobile-link py-2 text-navy-200 hover:text-white">Verify</a>
+        <a href="#request" class="mobile-link py-2 text-navy-200 hover:text-white">Request</a>
+
+        <a href="#contact" class="mobile-link py-2 text-navy-200 hover:text-white">Contact</a>
+        <a href="#" class="mt-2 px-5 py-2.5 bg-gradient-to-r from-electric-500 to-cyan-500 rounded-xl text-sm font-semibold text-center">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div class="animate-on-scroll">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-electric-500/10 border border-electric-500/20 text-electric-400 text-xs font-medium mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          BSIT Cybersecurity Capstone — QuadSec
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+          Secure Document <br/>
+          <span class="bg-gradient-to-r from-electric-400 via-cyan-400 to-electric-400 bg-clip-text text-transparent">Verification Portal</span>
+        </h1>
+        <p class="mt-6 text-lg text-navy-200 leading-relaxed max-w-xl">
+          E-Patunay delivers cryptographic assurance for barangay governance — digitally sign, verify, and track official documents with enterprise-grade PKI security.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#verify" class="group px-8 py-3.5 bg-gradient-to-r from-electric-500 to-cyan-500 rounded-xl font-semibold shadow-xl shadow-electric-500/20 hover:shadow-electric-500/40 transition-all hover:-translate-y-0.5 flex items-center gap-2">
+            Verify a Document
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+          </a>
+          <a href="#request" class="px-8 py-3.5 rounded-xl font-semibold border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition-all hover:-translate-y-0.5">
+            Request a Document
+          </a>
+        </div>
+        <div class="mt-10 flex items-center gap-8 text-sm text-navy-300">
+          <div class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg> RA 10173 Compliant</div>
+          <div class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg> End-to-End Encrypted</div>
+          <div class="hidden sm:flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg> Tamper-Evident Logs</div>
+        </div>
+      </div>
+      <div class="animate-on-scroll delay-200 flex justify-center lg:justify-end">
+        <div class="relative">
+          <div class="absolute -inset-8 bg-gradient-to-r from-electric-500/20 to-cyan-500/20 rounded-full blur-3xl"></div>
+          <img src="bcrd-logo.jpg" alt="BCRD Logo" class="relative w-full max-w-sm rounded-full hero-float drop-shadow-2xl" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="py-16 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-center text-xs font-medium text-navy-400 uppercase tracking-widest mb-10 animate-on-scroll">Aligned with Philippine Governance Standards</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 animate-on-scroll delay-100">
+        <div class="trust-badge"><span class="text-xs font-mono font-semibold text-navy-300">RA 12254</span><span class="text-[10px] text-navy-400">E-Governance Act</span></div>
+        <div class="trust-badge"><span class="text-xs font-mono font-semibold text-navy-300">RA 10173</span><span class="text-[10px] text-navy-400">Data Privacy Act</span></div>
+        <div class="trust-badge"><span class="text-xs font-mono font-semibold text-navy-300">RA 9470</span><span class="text-[10px] text-navy-400">Archives Act</span></div>
+        <div class="trust-badge"><span class="text-xs font-mono font-semibold text-navy-300">DICT</span><span class="text-[10px] text-navy-400">ICT Standards</span></div>
+        <div class="trust-badge"><span class="text-xs font-mono font-semibold text-navy-300">NPC</span><span class="text-[10px] text-navy-400">Privacy Commission</span></div>
+        <div class="trust-badge"><span class="text-xs font-mono font-semibold text-navy-300">DILG</span><span class="text-[10px] text-navy-400">Local Government</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16 animate-on-scroll">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Everything you need for <span class="bg-gradient-to-r from-electric-400 to-cyan-400 bg-clip-text text-transparent">secure governance</span></h2>
+        <p class="mt-4 text-navy-300">Built on enterprise-grade cryptography, E-Patunay ensures every barangay document is authentic, traceable, and tamper-proof.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="feature-card animate-on-scroll delay-100">
+          <div class="feature-icon bg-electric-500/10 text-electric-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div>
+          <h3 class="text-lg font-semibold mt-4">Digital Signatures</h3>
+          <p class="mt-2 text-sm text-navy-300 leading-relaxed">Every document is cryptographically signed with PKI certificates, ensuring authenticity and non-repudiation.</p>
+        </div>
+        <div class="feature-card animate-on-scroll delay-200">
+          <div class="feature-icon bg-cyan-500/10 text-cyan-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg></div>
+          <h3 class="text-lg font-semibold mt-4">Instant Verification</h3>
+          <p class="mt-2 text-sm text-navy-300 leading-relaxed">Verify any document's authenticity in seconds using a unique verification code or by uploading the signed PDF.</p>
+        </div>
+        <div class="feature-card animate-on-scroll delay-300">
+          <div class="feature-icon bg-emerald-500/10 text-emerald-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg></div>
+          <h3 class="text-lg font-semibold mt-4">Tamper-Evident Audit</h3>
+          <p class="mt-2 text-sm text-navy-300 leading-relaxed">Hash-chained audit ledger makes any unauthorized modification immediately detectable and traceable.</p>
+        </div>
+        <div class="feature-card animate-on-scroll delay-100">
+          <div class="feature-icon bg-violet-500/10 text-violet-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg></div>
+          <h3 class="text-lg font-semibold mt-4">Role-Based Access</h3>
+          <p class="mt-2 text-sm text-navy-300 leading-relaxed">Keycloak-powered IAM with multi-factor authentication and fine-grained RBAC for staff and administrators.</p>
+        </div>
+        <div class="feature-card animate-on-scroll delay-200">
+          <div class="feature-icon bg-gold-500/10 text-gold-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg></div>
+          <h3 class="text-lg font-semibold mt-4">Encrypted Storage</h3>
+          <p class="mt-2 text-sm text-navy-300 leading-relaxed">AES-256 encrypted documents stored in Azure Blob with automated lifecycle policies and key rotation.</p>
+        </div>
+        <div class="feature-card animate-on-scroll delay-300">
+          <div class="feature-icon bg-rose-500/10 text-rose-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3 class="text-lg font-semibold mt-4">Real-Time Tracking</h3>
+          <p class="mt-2 text-sm text-navy-300 leading-relaxed">Track your document request status in real-time from submission through review, approval, and issuance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERIFY SECTION -->
+  <section id="verify" class="py-24 bg-navy-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+        <div class="animate-on-scroll">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-4">External Verification</div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Verify document <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">authenticity</span></h2>
+          <p class="mt-4 text-navy-300 leading-relaxed">Enter the unique verification code printed on any E-Patunay document, or upload the signed PDF to instantly validate its cryptographic signature and integrity.</p>
+          <div class="mt-8 space-y-4">
+            <div class="flex items-start gap-3"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="text-emerald-400 text-sm font-bold">1</span></div><div><p class="font-medium text-sm">Enter Verification Code</p><p class="text-xs text-navy-400 mt-0.5">Find the 12-character code on the bottom of your document</p></div></div>
+            <div class="flex items-start gap-3"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="text-emerald-400 text-sm font-bold">2</span></div><div><p class="font-medium text-sm">Signature Validation</p><p class="text-xs text-navy-400 mt-0.5">We verify the PKI certificate chain and timestamp</p></div></div>
+            <div class="flex items-start gap-3"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="text-emerald-400 text-sm font-bold">3</span></div><div><p class="font-medium text-sm">Instant Result</p><p class="text-xs text-navy-400 mt-0.5">Get a detailed verification report with document metadata</p></div></div>
+          </div>
+        </div>
+        <div class="animate-on-scroll delay-200">
+          <div class="glass-card p-8">
+            <div class="flex gap-2 mb-6">
+              <button id="tab-code" class="verify-tab active px-4 py-2 rounded-lg text-sm font-medium transition-all" onclick="switchVerifyTab('code')">Verification Code</button>
+              <button id="tab-upload" class="verify-tab px-4 py-2 rounded-lg text-sm font-medium transition-all" onclick="switchVerifyTab('upload')">Upload PDF</button>
+            </div>
+            <div id="verify-code-panel">
+              <label class="block text-sm font-medium text-navy-200 mb-2">Document Verification Code</label>
+              <input id="verify-input" type="text" placeholder="e.g. EP-2026-XXXX-XXXX" maxlength="18" class="w-full px-4 py-3 bg-navy-800/50 border border-white/10 rounded-xl text-white font-mono placeholder:text-navy-500 focus:outline-none focus:border-electric-500/50 focus:ring-2 focus:ring-electric-500/20 transition-all" />
+              <button onclick="simulateVerify()" class="w-full mt-4 px-6 py-3.5 bg-gradient-to-r from-electric-500 to-cyan-500 rounded-xl font-semibold hover:shadow-lg hover:shadow-electric-500/25 transition-all hover:-translate-y-0.5">Verify Document</button>
+            </div>
+            <div id="verify-upload-panel" class="hidden">
+              <div id="drop-zone" class="border-2 border-dashed border-white/10 rounded-xl p-10 text-center hover:border-electric-500/30 transition-colors cursor-pointer" onclick="document.getElementById('file-input').click()">
+                <svg class="w-10 h-10 mx-auto text-navy-400 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
+                <p class="text-sm text-navy-300">Drag & drop your signed PDF here</p>
+                <p class="text-xs text-navy-500 mt-1">or click to browse</p>
+                <input id="file-input" type="file" accept=".pdf" class="hidden" onchange="handleFileSelect(event)" />
+              </div>
+              <button onclick="simulateVerify()" class="w-full mt-4 px-6 py-3.5 bg-gradient-to-r from-electric-500 to-cyan-500 rounded-xl font-semibold hover:shadow-lg hover:shadow-electric-500/25 transition-all hover:-translate-y-0.5">Verify Upload</button>
+            </div>
+            <div id="verify-result" class="hidden mt-6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST SECTION -->
+  <section id="request" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16 animate-on-scroll">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric-500/10 border border-electric-500/20 text-electric-400 text-xs font-medium mb-4">Public Request</div>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Request a barangay <span class="bg-gradient-to-r from-electric-400 to-cyan-400 bg-clip-text text-transparent">document online</span></h2>
+        <p class="mt-4 text-navy-300">Skip the line. Submit your document request digitally and receive a tracking number to monitor its progress.</p>
+      </div>
+      <div class="max-w-2xl mx-auto animate-on-scroll delay-100">
+        <div class="glass-card p-8">
+          <!-- Progress steps -->
+          <div class="flex items-center justify-between mb-8">
+            <div class="step-indicator active" data-step="1"><span class="step-dot">1</span><span class="step-label">Type</span></div>
+            <div class="step-line"></div>
+            <div class="step-indicator" data-step="2"><span class="step-dot">2</span><span class="step-label">Details</span></div>
+            <div class="step-line"></div>
+            <div class="step-indicator" data-step="3"><span class="step-dot">3</span><span class="step-label">Confirm</span></div>
+          </div>
+          <!-- Step 1 -->
+          <div id="req-step-1">
+            <label class="block text-sm font-medium text-navy-200 mb-3">Select Document Type</label>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <button class="doc-type-btn p-4 rounded-xl border border-white/10 bg-navy-800/30 text-left hover:border-electric-500/30 hover:bg-electric-500/5 transition-all" onclick="selectDocType(this, 'Barangay Clearance')"><span class="text-sm font-medium">Barangay Clearance</span><span class="text-xs text-navy-400 block mt-0.5">General-purpose clearance</span></button>
+              <button class="doc-type-btn p-4 rounded-xl border border-white/10 bg-navy-800/30 text-left hover:border-electric-500/30 hover:bg-electric-500/5 transition-all" onclick="selectDocType(this, 'Certificate of Residency')"><span class="text-sm font-medium">Certificate of Residency</span><span class="text-xs text-navy-400 block mt-0.5">Proof of residence</span></button>
+              <button class="doc-type-btn p-4 rounded-xl border border-white/10 bg-navy-800/30 text-left hover:border-electric-500/30 hover:bg-electric-500/5 transition-all" onclick="selectDocType(this, 'Certificate of Indigency')"><span class="text-sm font-medium">Certificate of Indigency</span><span class="text-xs text-navy-400 block mt-0.5">For financial assistance</span></button>
+              <button class="doc-type-btn p-4 rounded-xl border border-white/10 bg-navy-800/30 text-left hover:border-electric-500/30 hover:bg-electric-500/5 transition-all" onclick="selectDocType(this, 'Business Permit Clearance')"><span class="text-sm font-medium">Business Permit Clearance</span><span class="text-xs text-navy-400 block mt-0.5">For business applications</span></button>
+            </div>
+            <button id="req-next-1" class="w-full mt-6 px-6 py-3.5 bg-gradient-to-r from-electric-500 to-cyan-500 rounded-xl font-semibold opacity-50 cursor-not-allowed transition-all" disabled onclick="goToStep(2)">Continue</button>
+          </div>
+          <!-- Step 2 -->
+          <div id="req-step-2" class="hidden">
+            <div class="space-y-4">
+              <div><label class="block text-sm font-medium text-navy-200 mb-1.5">Full Name</label><input type="text" id="req-name" placeholder="Juan Dela Cruz" class="form-input" /></div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div><label class="block text-sm font-medium text-navy-200 mb-1.5">Email Address</label><input type="email" id="req-email" placeholder="juan@email.com" class="form-input" /></div>
+                <div><label class="block text-sm font-medium text-navy-200 mb-1.5">Contact Number</label><input type="tel" id="req-phone" placeholder="09XX XXX XXXX" class="form-input" /></div>
+              </div>
+              <div><label class="block text-sm font-medium text-navy-200 mb-1.5">Complete Address</label><input type="text" id="req-address" placeholder="123 Rizal St., Brgy. Example, City" class="form-input" /></div>
+              <div><label class="block text-sm font-medium text-navy-200 mb-1.5">Purpose</label><textarea id="req-purpose" rows="3" placeholder="Brief description of why you need this document..." class="form-input resize-none"></textarea></div>
+            </div>
+            <div class="flex gap-3 mt-6">
+              <button onclick="goToStep(1)" class="px-6 py-3.5 rounded-xl font-semibold border border-white/10 bg-white/5 hover:bg-white/10 transition-all flex-1">Back</button>
+              <button onclick="goToStep(3)" class="px-6 py-3.5 bg-gradient-to-r from-electric-500 to-cyan-500 rounded-xl font-semibold hover:shadow-lg hover:shadow-electric-500/25 transition-all flex-1">Review & Submit</button>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div id="req-step-3" class="hidden">
+            <div id="req-summary" class="space-y-3 mb-6"></div>
+            <div class="flex gap-3">
+              <button onclick="goToStep(2)" class="px-6 py-3.5 rounded-xl font-semibold border border-white/10 bg-white/5 hover:bg-white/10 transition-all flex-1">Edit</button>
+              <button onclick="submitRequest()" class="px-6 py-3.5 bg-gradient-to-r from-electric-500 to-cyan-500 rounded-xl font-semibold hover:shadow-lg hover:shadow-electric-500/25 transition-all flex-1">Submit Request</button>
+            </div>
+          </div>
+          <!-- Success -->
+          <div id="req-success" class="hidden text-center py-8"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 bg-navy-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div class="animate-on-scroll">
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Get in <span class="bg-gradient-to-r from-electric-400 to-cyan-400 bg-clip-text text-transparent">touch</span></h2>
+          <p class="mt-4 text-navy-300 leading-relaxed">Have questions about E-Patunay or interested in the e-governance implementation? We'd love to hear from you.</p>
+          <div class="mt-8 space-y-4">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-electric-500/10 flex items-center justify-center"><svg class="w-5 h-5 text-electric-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div><div><p class="text-sm font-medium">Email</p><p class="text-xs text-navy-400">quadsec@epatunay.gov.ph</p></div></div>
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-electric-500/10 flex items-center justify-center"><svg class="w-5 h-5 text-electric-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></div><div><p class="text-sm font-medium">Location</p><p class="text-xs text-navy-400">BCRD, District 2, Quezon City</p></div></div>
+          </div>
+        </div>
+        <div class="animate-on-scroll delay-200">
+          <form id="contact-form" class="glass-card p-8" onsubmit="handleContact(event)">
+            <div class="space-y-4">
+              <div><label class="block text-sm font-medium text-navy-200 mb-1.5">Name</label><input type="text" placeholder="Your full name" class="form-input" required /></div>
+              <div><label class="block text-sm font-medium text-navy-200 mb-1.5">Email</label><input type="email" placeholder="you@example.com" class="form-input" required /></div>
+              <div><label class="block text-sm font-medium text-navy-200 mb-1.5">Message</label><textarea rows="4" placeholder="Tell us about your inquiry..." class="form-input resize-none" required></textarea></div>
+            </div>
+            <button type="submit" class="w-full mt-6 px-6 py-3.5 bg-gradient-to-r from-electric-500 to-cyan-500 rounded-xl font-semibold hover:shadow-lg hover:shadow-electric-500/25 transition-all hover:-translate-y-0.5">Send Message</button>
+            <div id="contact-success" class="hidden mt-4 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm text-center">Message sent successfully! We'll get back to you soon.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center animate-on-scroll">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Ready to verify your <span class="bg-gradient-to-r from-electric-400 to-cyan-400 bg-clip-text text-transparent">documents?</span></h2>
+      <p class="mt-4 text-navy-300 max-w-xl mx-auto">Whether you need to verify an existing document or request a new one, E-Patunay makes barangay governance accessible and secure.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#verify" class="group px-8 py-3.5 bg-gradient-to-r from-electric-500 to-cyan-500 rounded-xl font-semibold shadow-xl shadow-electric-500/20 hover:shadow-electric-500/40 transition-all hover:-translate-y-0.5 flex items-center gap-2">
+          Verify Now
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+        <a href="#" class="px-8 py-3.5 rounded-xl font-semibold border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition-all hover:-translate-y-0.5">Login to Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-16 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="bcrd-logo.jpg" alt="BCRD Logo" class="w-9 h-9 rounded-full object-cover" />
+            <span class="text-lg font-bold tracking-tight">E-Patunay</span>
+          </div>
+          <p class="text-xs text-navy-400 leading-relaxed">Cryptographic-Assurance Governance System for the Barangay Community Relations Department.</p>
+          <div class="flex gap-3 mt-4">
+            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-electric-500/20 hover:text-electric-400 transition-all text-navy-400"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-electric-500/20 hover:text-electric-400 transition-all text-navy-400"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold mb-4">Platform</h4>
+          <ul class="space-y-2">
+            <li><a href="#verify" class="text-xs text-navy-400 hover:text-white transition-colors">Verify Document</a></li>
+            <li><a href="#request" class="text-xs text-navy-400 hover:text-white transition-colors">Request Document</a></li>
+            <li><a href="#features" class="text-xs text-navy-400 hover:text-white transition-colors">Features</a></li>
+            <li><a href="#" class="text-xs text-navy-400 hover:text-white transition-colors">Dashboard Login</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold mb-4">Compliance</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-xs text-navy-400 hover:text-white transition-colors">RA 12254 — E-Governance</a></li>
+            <li><a href="#" class="text-xs text-navy-400 hover:text-white transition-colors">RA 10173 — Data Privacy</a></li>
+            <li><a href="#" class="text-xs text-navy-400 hover:text-white transition-colors">RA 9470 — Archives Act</a></li>
+            <li><a href="#" class="text-xs text-navy-400 hover:text-white transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold mb-4">Team QuadSec</h4>
+          <ul class="space-y-2">
+            <li><span class="text-xs text-navy-400">BSIT — Cybersecurity</span></li>
+            <li><span class="text-xs text-navy-400">Capstone Project 2026</span></li>
+            <li><a href="#contact" class="text-xs text-navy-400 hover:text-white transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-navy-500">© 2026 E-Patunay by QuadSec. All rights reserved.</p>
+        <p class="text-xs text-navy-500">Cryptographic-Assurance Governance System for BCRD</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

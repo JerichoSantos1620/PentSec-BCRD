@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Tables</title>
+
+    <style>
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse ;
+            /*border: 1px;
+            border-style: solid;
+            border-color: black;*/
+        }
+        td{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        th{
+            background-color: antiquewhite;
+        }
+        tr:nth-child(odd){
+            background-color: aquamarine;
+        }
+        tr:nth-child(even){
+            background-color: green;
+        }
+        #favorite-subject{
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>Using Tables</h3>
+    <table>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="5">My Schedule</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>Days</th>
+                <th>Time</th>
+                <th>Subject</th>
+                <th>Room</th>
+            </tr>
+        </thead>
+            
+            
+        <tbody>
+            <tr>
+                <td rowspan="6">Jericho Santos</td>
+                <td>MWF</td>
+                <td>8:00 - 9:30</td>
+                <td  id="favorite-subject">Physics</td>
+                <td>F601</td>
+            </tr>
+            <tr>
+                <td>TThs</td>
+                <td>8:00 - 9:30</td>
+                <td>Algebra</td>
+                <td>F602</td>
+            </tr>
+            <tr>
+                <td>MWF</td>
+                <td>8:00 - 9:30</td>
+                <td>Physics</td>
+                <td>F601</td>
+            </tr>
+            <tr>
+                <td>TThs</td>
+                <td>8:00 - 9:30</td>
+                <td>Algebra</td>
+                <td>F602</td>
+            </tr>
+            <tr>
+                <td>MWF</td>
+                <td>8:00 - 9:30</td>
+                <td>Physics</td>
+                <td>F601</td>
+            </tr>
+            <tr>
+                <td>TThs</td>
+                <td>8:00 - 9:30</td>
+                <td>Algebra</td>
+                <td>F602</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <h1><p id="header" onmouseover="display()">This is how we use javascript</p></h1>
+    <button type="button" onclick="display()">Click me!</button>
+    <button type="button" onclick="showAlert()">Show Alert</button>
+    <button type="button" onclick="showConfirm()">Show Confirm</button>
+    <script type="text/javascript">
+        function display(){
+        var head = document.getElementById("header");
+        head.innerHTML = "Javascript";
+    }
+    
+    function showAlert() {
+        alert("This is an alert box");
+    }
+
+    function showConfirm(){
+        var response = confirm("This is to confirm what you want to do.");
+        if(response == true){
+            alert("You clicked OK!");
+        }else{
+            alert("You clicked Cancel!")
+        }
+    }
+    
+    function showPrompt(){
+        var response = prompt("Please input anything");
+        alert("You have entered: " + response);
+    }
+
+    </script>
+</body> 
+</html>

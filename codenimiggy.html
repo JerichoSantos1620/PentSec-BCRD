@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Pokémon GO Merchandise</title>
+
+    <link rel="shortcut icon" href="https://storage.googleapis.com/nianticweb-branding/niantic/niantic-favicon-black.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("https://static.prod.pokemon.com/images/pikachu_pattern.png");
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #3b4cca;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .pokemon-logo {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .register-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .niantic-logo {
+            height: 30px;
+            margin-right: 20px;
+        }
+
+        .pokemon-logo {
+            height: 50px;
+        }
+
+        .register-container h2 {
+            margin-bottom: 20px;
+            color: #3b4cca;
+            font-weight: bold;
+        }
+
+        .register-container input[type="text"],
+        .register-container input[type="email"],
+        .register-container input[type="password"],
+        .register-container input[type="date"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .register-container select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .register-container input[type="submit"] {
+            background: #3b4cca;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .register-container input[type="submit"]:hover {
+            background: #2c388e;
+        }
+
+        .register-container p {
+            margin-top: 20px;
+        }
+
+        .register-container a {
+            color: #3b4cca;
+            text-decoration: none;
+        }
+
+        .download-section {
+            background: #3b4cca;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .download-section .logos {
+            justify-content: center;
+        }
+
+        .download-section img.pokemon-logo {
+            height: 150px;
+            margin: 0 10px;
+        }
+
+        .download-section h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .download-section p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .download-buttons img {
+            width: 150px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="pokemon-logo" src="https://store.pokemongolive.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fplatform-webstore-rel-assets%2Fpgo%2Fsite_assets%2Flogo.png&w=128&q=75" alt="Pokémon GO Logo">
+            <nav>
+                <ul class="nav">
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="register-container">
+        <div class="logos">
+            <img class="niantic-logo" src="https://storage.googleapis.com/nianticweb-branding/niantic/niantic-horizontal-black.svg" alt="Niantic Logo">
+            <img class="pokemon-logo" src="https://store.pokemongolive.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fplatform-webstore-rel-assets%2Fpgo%2Fsite_assets%2Flogo.png&w=128&q=75" alt="Pokémon GO Logo">
+        </div>
+        <h2>Register</h2>
+        <form action="dashboard.html" method="POST">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <select name="gender" required>
+                <option value="">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="date" name="birthday" placeholder="Birthday" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <input type="text" name="pokemon_go_account_code" placeholder="Pokémon GO Account Code" required>
+            <input type="submit" value="Register">
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+        <div class="download-section">
+            <div class="logos">
+                <img class="pokemon-logo" src="https://store.pokemongolive.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fplatform-webstore-rel-assets%2Fpgo%2Fsite_assets%2Flogo.png&w=128&q=75" alt="Pokémon GO Logo">
+            </div>
+            <h2>Get Up and GO! Download Today</h2>
+            <p>Explore the world of Pokémon GO and catch 'em all!</p>
+            <div class="download-buttons">
+                <img src="https://store.pokemongolive.com/_next/image?url=%2Fos-images%2Fapple%2Fapp-store-badge.en.png&w=256&q=75" alt="Download on the App Store" onclick="window.open('https://apps.apple.com/us/app/pok%C3%A9mon-go/id1094591345', '_blank')">
+                <img src="https://store.pokemongolive.com/_next/image?url=%2Fos-images%2Fgoogle%2Fgoogle-play-badge.en.png&w=256&q=75" alt="Get it on Google Play" onclick="window.open('https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo', '_blank')">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Pokémon. © 1995–2024 Nintendo/Creatures Inc./GAME FREAK inc. Pokémon and Pokémon character names are trademarks of Nintendo.</p>
+            <p>All assets and information herewith are owned by Niantic Inc. Copyrights belong to them. This is for academic purposes only.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

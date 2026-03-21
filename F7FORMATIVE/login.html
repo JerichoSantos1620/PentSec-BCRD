@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://eclat.blob.core.windows.net/image/D5809F44-B31C-48D4-B9BA-8953AF1E5913.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            color: #333;
+        }
+        .login-container {
+            background: none;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            color: white; 
+        }
+        .login-container input[type=email], 
+        .login-container input[type=password] {
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 5px;
+            padding: 10px;
+            color: white;
+        }
+        .login-container input[type=email]:focus,
+        .login-container input[type=password]:focus {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            outline: none;
+            color: white;
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        .logo:hover {
+            cursor: pointer;
+            color: white; 
+        }
+        .options {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .footer a {
+            margin: 0 5px;
+            color: #007bff;
+        }
+        .footer .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .footer .logo-container img {
+            width: 20px;
+            margin-right: 5px;
+        }
+        .footer .logo-container a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer .logo-container a:hover {
+            text-decoration: underline;
+        }
+        .transparent-button {
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .transparent-button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_hcjXG38hLSNlNz7UYX84KAqXhQ6YFwNhIQ&s" alt="FEU Logo" class="logo">
+        <form id="loginForm" novalidate>
+            <div class="form-group">
+                <label for="email">Username</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                <div class="invalid-feedback">Please enter your email.</div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                <div class="invalid-feedback">Please enter your password.</div>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="staySignedIn">
+                <label class="form-check-label" for="staySignedIn">Stay Signed In</label>
+            </div>
+            <button type="submit" class="transparent-button">Login</button>
+            <div class="options">
+                <a href="#" class="d-block mb-2">Forgot Password?</a>
+                <a href="#" class="btn btn-secondary btn-block">Sign in with Microsoft</a>
+            </div>
+        </form>
+        <div class="footer">
+            <a href="#">Help</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Acceptable Use Policy</a> |
+            <a href="https://www.facebook.com/FarEasternUniversity" target="_blank">Facebook</a> |
+            <a href="https://twitter.com/FarEasternU" target="_blank">Twitter</a>
+            <div class="logo-container">
+                <a href="https://www.instructure.com" target="_blank">
+                    <img src="data:image/png;base64,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" alt="Instructure Logo">
+                    <span>Instructure</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+        $(document).ready(function() {
+            $('#loginForm').on('submit', function(event) {
+                var isValid = true;
+                $(this).find('input').each(function() {
+                    if (!this.value) {
+                        $(this).addClass('is-invalid');
+                        isValid = false;
+                    } else {
+                        $(this).removeClass('is-invalid');
+                    }
+                });
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

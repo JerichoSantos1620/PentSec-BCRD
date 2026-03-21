@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #174D29;
+            margin: 0;
+            color: #333;
+        }
+        .login-container {
+            background: none;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            color: white; 
+        }
+        .login-container input[type=text], 
+        .login-container input[type=password] {
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 5px;
+            padding: 10px;
+            color: white;
+        }
+        .login-container input[type=text]:focus,
+        .login-container input[type=password]:focus {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            outline: none;
+            color: white;
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        .logo:hover {
+            cursor: pointer;
+            color: white; 
+        }
+        .options {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .footer a {
+            margin: 0 5px;
+            color: #007bff;
+        }
+        .footer .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .footer .logo-container img {
+            width: 20px;
+            margin-right: 5px;
+        }
+        .footer .logo-container a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer .logo-container a:hover {
+            text-decoration: underline;
+        }
+        .transparent-button {
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .transparent-button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/77/Far_Eastern_University_logo.png" alt="FEU Logo" class="logo">
+        <form id="loginForm" novalidate>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                <div class="invalid-feedback">Please enter your username.</div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                <div class="invalid-feedback">Please enter your password.</div>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="staySignedIn">
+                <label class="form-check-label" for="staySignedIn">Stay Signed In</label>
+            </div>
+            <button type="submit" class="transparent-button">Login</button>
+            <div class="options">
+                <a href="#" class="d-block mb-2">Forgot Password?</a>
+                <a href="#" class="btn btn-secondary btn-block">Login with Microsoft</a>
+            </div>
+        </form>
+        <div class="footer">
+            <a href="#">Help</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Acceptable Use Policy</a> |
+            <a href="https://www.facebook.com/FarEasternUniversity" target="_blank">Facebook</a> |
+            <a href="https://twitter.com/FarEasternU" target="_blank">Twitter</a>
+            <div class="logo-container">
+                <a href="https://www.instructure.com" target="_blank">
+                    <img src="data:image/png;base64,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" alt="Canvas Logo">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Client-side form validation
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var form = document.getElementById('loginForm');
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            }, false);
+        })();
+    </script>
+</body>
+</html>

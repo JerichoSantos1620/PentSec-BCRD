@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/E-Patunay -type f -name \"*.md\" -o -name \"*.txt\" -o -name \"README*\" -o -name \"*.json\" -o -name \"*.php\" -o -name \"*.sql\" 2>/dev/null | head -50)",
+      "Bash(python3 -c \"from docx import Document; doc = Document\\('ePatunay_Development_Process_Outline.docx'\\); [print\\(para.text\\) for para in doc.paragraphs]\")",
+      "Bash(/c/Users/sorre/AppData/Local/Programs/Python/Python312/python -c \"from docx import Document; doc = Document\\('/c/E-Patunay/ePatunay_Development_Process_Outline.docx'\\); [print\\(para.text\\) for para in doc.paragraphs]\" 2>&1 | head -200)",
+      "Bash(cd /tmp && unzip -p /c/E-Patunay/ePatunay_Development_Process_Outline.docx word/document.xml | head -500)",
+      "Bash(cd /tmp && unzip -p /c/E-Patunay/ePatunay_Development_Process_Outline.docx word/document.xml 2>/dev/null | perl -ne 's/<[^>]+>//g; print' | sed 's/&lt;/</g; s/&gt;/>/g; s/&amp;/\\\\&/g' | grep -v '^[[:space:]]*$' | head -300)",
+      "Bash(php:*)",
+      "Bash(composer create-project:*)",
+      "Bash(shopt:*)",
+      "Bash(npm install:*)",
+      "Bash(docker compose:*)",
+      "Bash(sleep:*)",
+      "Bash(npm run:*)",
+      "Bash(curl:*)",
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(grep -r \"User::create\\\\|User::factory\" /c/E-Patunay/app --include=*.php)",
+      "Bash(grep -r \"bcrypt\\\\|Hash::make\" /c/E-Patunay/app /c/E-Patunay/database --include=*.php)",
+      "Bash(ls -la /c/E-Patunay/*.js /c/E-Patunay/*.config.*)",
+      "Bash(grep -r \"class=\" /c/E-Patunay/resources/views/*.blade.php)",
+      "Bash(composer require:*)",
+      "Bash(ls:*)",
+      "Bash(grep -r \"PersonalDataSheet\\\\|Personal Data Sheet\" /c/E-Patunay/resources --include=*.blade.php --include=*.php)",
+      "Bash(xargs grep:*)",
+      "Bash(find /c/E-Patunay -maxdepth 3 -type d ! -path */node_modules/* ! -path */.git/* ! -path */vendor/*)"
+    ]
+  }
+}
